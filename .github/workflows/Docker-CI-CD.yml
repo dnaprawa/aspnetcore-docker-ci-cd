@@ -39,8 +39,8 @@ jobs:
       uses: docker/build-push-action@v2
       with:
           # Set build context as current (root) directory
-          context: .
+          context: ./HealthCheckExampleApp
           push: true
           tags: |
-            dnaprawa/aspnetcore-example:latest
-            dnaprawa/aspnetcore-example:${{ github.sha }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/aspnetcore-example:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/aspnetcore-example:${{ github.sha }}
